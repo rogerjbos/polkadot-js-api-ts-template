@@ -1,0 +1,43 @@
+{
+	"name": "polkadot-js-api-ts-template",
+	"version": "0.1.0",
+	"description": "A template project to kickstart hacking on top of @polkadot/api, using typescript",
+	"main": "./build/index.js",
+	"scripts": {
+		"run": "./node_modules/.bin/ts-node ./src/index.ts",
+		"run:dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/ts-node ./src/index.ts",
+		"build": "npm run clean && ./node_modules/.bin/tsc --pretty --declaration",
+		"build:dev": "./node_modules/.bin/tsc --pretty --declaration --watch",
+		"clean": "./node_modules/.bin/rimraf build",
+		"update": "./node_modules/.bin/ncu -u && yarn",
+		"lint": "eslint . --ext .ts --fix",
+		"format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+	},
+	"author": "@kianenigma",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/cli": "^7.22.9",
+		"@babel/core": "^7.22.9",
+		"@babel/preset-typescript": "^7.22.5",
+		"@types/node": "^20.4.4",
+		"@types/yargs": "^17.0.24",
+		"@typescript-eslint/eslint-plugin": "^6.1.0",
+		"@typescript-eslint/parser": "^6.1.0",
+		"eslint": "^8.45.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^5.0.0",
+		"nodemon": "^3.0.1",
+		"npm-check-updates": "16.10.16",
+		"prettier": "^3.0.0",
+		"rimraf": "^5.0.1",
+		"ts-loader": "^9.4.4",
+		"ts-node": "^10.9.1",
+		"typescript": "5.1.6"
+	},
+	"dependencies": {
+		"@polkadot/api": "10.9.1",
+		"@polkadot/rpc-provider": "^10.9.1",
+		"@substrate/connect": "^0.7.30",
+		"yargs": "^17.7.2"
+	}
+}
